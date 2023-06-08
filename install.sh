@@ -9,10 +9,11 @@ pacman -Syu sudo opendoas i3status xf86-video-intel vulkan-intel mesa syncthing 
 # pacman -S xorg xorg-xinit xbindkeys xlockmore maim i3-wm hsetroot xclip 
 
 # For wayland
-pacman -S sway swaybg wmenu xdg-desktop-portal-wlr wl-clipboard grim slurp
+pacman -S sway swaybg xdg-desktop-portal-wlr wl-clipboard grim slurp
 
+cp sudoers /etc/sudoers
 cp doas.conf /etc/doas.conf
 
-useradd -g wheel gui
+useradd -m -g wheel gui
 usermod -aG audio gui
 usermod -aG sys gui
